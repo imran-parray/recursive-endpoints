@@ -1,4 +1,2 @@
-https://imran.com/file1/file2/file3?fname=imran&lname=nazir
-https://imran.com/filex1/filex2/file4?hello=1&world=2
-
-
+/file1/file2/file3?fname=imran&lname=nazir
+/filex1/filex2/file4?hello=1&world=2

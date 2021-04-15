@@ -29,16 +29,21 @@ for urlx in urls:
 		pass
 	url_full=urlx.split('?')
 	url=url_full[0];
-	params=url_full[1];
+	if len(url_full)>1:
+		params=url_full[1];
 	endpointsx=url.split('/')
-	endpoints=endpointsx[3:]
+	if 'http' in endpointsx[0]:
+		endpoints=endpointsx[3:]
+	else:
+		endpoints=endpointsx
 	if args.keepdomain=='True':
-		end_url=endpointsx[0]+'/'+endpointsx[2]
+		end_url=endpointsx[0]+'//'+endpointsx[2]
 	else:
 		end_url=''
 	for endpoint in endpoints:
 		end_url=end_url+'/'+endpoint
 		if(args.keepparams=='True'):
-			print(end_url+'?'+params)
+			if len(url_full)>1:
+				print(end_url+'?'+params)
 		else:
 			print(end_url)
